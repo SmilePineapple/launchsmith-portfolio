@@ -43,8 +43,11 @@ export default function HomePage() {
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70">
                 I build websites, web apps, and iOS apps — clean UX, modern stacks,
-                and a professional finish. If you can describe what you want, we can
-                ship it.
+                and a professional finish. Based in Longridge, Preston, I work with
+                clients across the UK including Manchester, Liverpool, Leeds, London,
+                and beyond. Whether you need a new website, a web application, or a
+                mobile app, I'll help you turn your idea into something real. If you
+                can describe what you want, we can ship it.
               </p>
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">
                 <Link
@@ -87,19 +90,19 @@ export default function HomePage() {
             {[
               {
                 title: "Websites",
-                desc: "Fast, SEO-friendly sites with crisp design and clear messaging.",
+                desc: "Fast, SEO-friendly sites with crisp design and clear messaging. I build responsive websites that work beautifully on all devices, helping you reach more customers across the UK.",
               },
               {
                 title: "Web Apps",
-                desc: "Full-stack builds with auth, dashboards, and scalable foundations.",
+                desc: "Full-stack builds with auth, dashboards, and scalable foundations. From internal tools to customer-facing platforms, I create web applications that solve real business problems.",
               },
               {
                 title: "Mobile Apps",
-                desc: "Polished iOS/Android apps with great UX and solid performance.",
+                desc: "Polished iOS/Android apps with great UX and solid performance. I build native iOS apps and cross-platform mobile solutions that users love to use.",
               },
               {
                 title: "Automation / AI",
-                desc: "Integrations, workflows, and AI features that remove busywork.",
+                desc: "Integrations, workflows, and AI features that remove busywork. I connect your tools, automate repetitive tasks, and add AI capabilities where they make sense.",
               },
             ].map((s) => (
               <div

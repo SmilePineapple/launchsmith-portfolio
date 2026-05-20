@@ -35,23 +35,30 @@ export default function AboutPage() {
               About
             </h1>
             <p className="mt-4 text-lg leading-8 text-white/70">
-              Launchsmith is a solo builder focused on shipping clean websites, web
-              apps, and mobile apps. This is placeholder copy — you can swap it for
-              your real story later.
+              I'm Jake, a web and mobile developer based in Longridge, Preston. I
+              build clean, modern websites, web applications, and iOS apps for
+              clients across the UK. Whether you're a startup founder, small business
+              owner, or someone with a great idea, I'll help you turn it into a
+              polished product that actually works.
+            </p>
+            <p className="mt-4 text-lg leading-8 text-white/70">
+              I believe in straightforward communication, honest timelines, and
+              shipping quality work. No jargon overload, no hidden costs — just a
+              collaborative process where we build something you're proud of.
             </p>
             <div className="mt-8 grid gap-4">
               {[
                 {
                   title: "What I do",
-                  body: "End-to-end product builds: UX, frontend, backend, integrations, and deployment.",
+                  body: "End-to-end product builds: from initial idea and UX design through to frontend, backend, integrations, and deployment. I handle the full development process so you can focus on your business.",
                 },
                 {
                   title: "How I work",
-                  body: "Fast iteration, clear communication, and a focus on shipping with quality.",
+                  body: "Fast iteration, clear communication, and a focus on shipping with quality. I'll keep you updated throughout the project, explain technical decisions in plain English, and deliver on the timeline we agree on.",
                 },
                 {
                   title: "Availability",
-                  body: "Currently taking on new projects. Send a message with what you’re building and your timeline.",
+                  body: "Currently taking on new projects. Whether you're in Manchester, Liverpool, Leeds, London, or anywhere else in the UK, send a message with what you're building and your timeline.",
                 },
               ].map((s) => (
                 <section

@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 const services = [
   {
     title: "Websites",
+    description: "I build modern, responsive websites that help you connect with customers across the UK. From landing pages to full marketing sites, I create fast, SEO-friendly designs that work beautifully on every device.",
     outcomes: [
       "Fast, responsive, modern design",
       "SEO-ready structure and metadata",
@@ -24,6 +25,7 @@ const services = [
   },
   {
     title: "Web Apps",
+    description: "Need more than a website? I build full-stack web applications with authentication, dashboards, and scalable foundations. Whether it's an internal tool or customer platform, I'll create something that solves real business problems.",
     outcomes: [
       "Solid foundations for scaling",
       "Auth, dashboards, admin flows",
@@ -33,6 +35,7 @@ const services = [
   },
   {
     title: "Mobile Apps",
+    description: "I build polished iOS and mobile applications that users love. From MVPs to companion apps, I focus on great UX, solid performance, and clean app store submissions. Let's turn your mobile idea into something people actually want to use.",
     outcomes: [
       "Polished UX for iOS and Android",
       "Performance and reliability focus",
@@ -42,6 +45,7 @@ const services = [
   },
   {
     title: "Automation / AI Integrations",
+    description: "Let's remove the busywork. I connect your tools via APIs and webhooks, automate repetitive workflows, and add AI features where they actually make sense. From internal tools to customer-facing automation, I'll help you work smarter.",
     outcomes: [
       "Automate manual workflows",
       "Connect tools via APIs and webhooks",
@@ -131,6 +135,9 @@ export default function ServicesPage() {
               <h2 className="text-base font-semibold tracking-tight text-white">
                 {s.title}
               </h2>
+              <p className="mt-3 text-sm leading-6 text-white/70">
+                {s.description}
+              </p>
               <div className="mt-4 grid gap-6 sm:grid-cols-2">
                 <div>
                   <div className="text-xs font-semibold uppercase tracking-wide text-white/60">
