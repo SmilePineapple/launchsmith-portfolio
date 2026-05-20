@@ -1,5 +1,15 @@
 import { Container } from "@/components/Container";
 import { ContactForm } from "@/components/ContactForm";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Contact Launchsmith: UK web and mobile developer based in Longridge, Preston. Get in touch for website development, web apps, iOS apps, and automation projects across the UK.",
+  alternates: {
+    canonical: "/contact",
+  },
+};
 
 export default function ContactPage() {
   return (

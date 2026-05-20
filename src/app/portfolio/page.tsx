@@ -1,8 +1,18 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 
 import { Container } from "@/components/Container";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projects } from "@/lib/projects";
+
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description:
+    "Launchsmith portfolio: View our recent projects including SEO monitoring tools, Gmail downloaders, iOS tournament apps, and more. UK web and mobile developer delivering quality builds.",
+  alternates: {
+    canonical: "/portfolio",
+  },
+};
 
 const featured = projects.filter((p) => p.featured);
 const more = projects.filter((p) => !p.featured);

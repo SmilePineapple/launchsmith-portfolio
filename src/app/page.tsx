@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 
 import { Container } from "@/components/Container";
 import { ProjectCard } from "@/components/ProjectCard";
@@ -6,6 +7,15 @@ import { projects } from "@/lib/projects";
 import { site } from "@/lib/site";
 
 const featured = projects.filter((p) => p.featured).slice(0, 3);
+
+export const metadata: Metadata = {
+  title: "Home",
+  description:
+    "Launchsmith: UK web and mobile developer building clean, modern websites, web apps, and iOS apps. Based in Longridge, Preston, serving clients across the UK.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function HomePage() {
   return (

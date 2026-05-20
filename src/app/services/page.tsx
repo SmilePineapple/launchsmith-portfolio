@@ -1,6 +1,16 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 
 import { Container } from "@/components/Container";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description:
+    "Launchsmith services: Website development, web applications, iOS apps, and automation/AI integration. UK-based developer serving clients across the country with fast, professional builds.",
+  alternates: {
+    canonical: "/services",
+  },
+};
 
 const services = [
   {

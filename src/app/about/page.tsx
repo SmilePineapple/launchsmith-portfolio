@@ -1,7 +1,17 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 
 import { Container } from "@/components/Container";
 import { site } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Learn about Launchsmith: a UK web and mobile developer based in Longridge, Preston, specializing in clean websites, web apps, and iOS applications for clients across the UK.",
+  alternates: {
+    canonical: "/about",
+  },
+};
 
 export default function AboutPage() {
   return (
