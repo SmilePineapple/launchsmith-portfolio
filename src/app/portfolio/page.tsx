@@ -1,45 +1,30 @@
+"use client";
+
 import Link from "next/link";
-import type { Metadata } from "next";
+import { useState } from "react";
 
 import { Container } from "@/components/Container";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projects } from "@/lib/projects";
 
-export const metadata: Metadata = {
-  title: "Portfolio",
-  description:
-    "Launchsmith portfolio: View our recent projects including SEO monitoring tools, Gmail downloaders, iOS tournament apps, and more. UK web and mobile developer delivering quality builds.",
-  alternates: {
-    canonical: "/portfolio",
-  },
-};
-
 const featured = projects.filter((p) => p.featured);
 const more = projects.filter((p) => !p.featured);
 
-const portfolioSchema = {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  name: "Launchsmith Portfolio",
-  description: "Launchsmith portfolio: View our recent projects including SEO monitoring tools, Gmail downloaders, iOS tournament apps, and more. UK web and mobile developer delivering quality builds.",
-  url: "https://launchsmith-portfolio.vercel.app/portfolio",
-  hasPart: featured.map((project) => ({
-    "@type": "CreativeWork",
-    name: project.title,
-    description: project.summary,
-    url: `https://launchsmith-portfolio.vercel.app/portfolio/${project.slug}`,
-  })),
-};
+const categories = ["All", "Website", "Web App", "iOS App"];
 
 export default function PortfolioPage() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const filteredFeatured = selectedCategory === "All"
+    ? featured
+    : featured.filter((p) => p.category === selectedCategory);
+
+  const filteredMore = selectedCategory === "All"
+    ? more
+    : more.filter((p) => p.category === selectedCategory);
+
   return (
     <div className="bg-transparent">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(portfolioSchema) }}
-        />
-      </head>
       <Container className="py-14 sm:py-16">
         <div className="relative overflow-hidden rounded-[36px] border border-white/10 p-8 card-glass ring-glow sm:p-10">
           <div
@@ -61,13 +46,31 @@ export default function PortfolioPage() {
         </div>
 
         <div className="mt-10">
+          <div className="flex flex-wrap items-center gap-3">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] rounded-full transition-colors ${
+                  selectedCategory === category
+                    ? "bg-[var(--accent-2)] text-white"
+                    : "border border-white/10 text-white/70 hover:border-white/30 hover:text-white"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-8">
           <div className="flex items-end justify-between gap-4">
             <h2 className="font-serif text-2xl font-semibold tracking-tight text-white">
               Featured
             </h2>
           </div>
           <div className="mt-8 grid gap-5 lg:grid-cols-3">
-            {featured.map((project) => (
+            {filteredFeatured.map((project) => (
               <ProjectCard key={project.slug} project={project} />
             ))}
           </div>
@@ -86,7 +89,7 @@ export default function PortfolioPage() {
             </Link>
           </div>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {more.map((project) => (
+            {filteredMore.map((project) => (
               <ProjectCard key={project.slug} project={project} />
             ))}
           </div>

@@ -79,6 +79,33 @@ export default function HomePage() {
         </Container>
       </section>
 
+      <section className="border-b border-white/10 bg-transparent">
+        <Container className="py-10">
+          <div className="text-center">
+            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
+              Trusted by
+            </div>
+            <div className="mt-6 flex flex-wrap justify-center gap-8 sm:gap-12">
+              {[
+                "Startups",
+                "Small Businesses",
+                "Founders",
+                "Product Teams",
+                "Marketing Agencies",
+                "E-commerce Brands",
+              ].map((client) => (
+                <div
+                  key={client}
+                  className="text-sm font-semibold tracking-tight text-white/40"
+                >
+                  {client}
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
       <section className="bg-transparent">
         <Container className="py-14 sm:py-16">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
@@ -215,7 +242,7 @@ export default function HomePage() {
                 Have something to build?
               </h2>
               <p className="mt-2 text-sm text-white/70">
-                Send a quick message with what you’re building and your timeline.
+                Send a quick message with what you're building and your timeline.
               </p>
             </div>
             <Link
@@ -224,6 +251,42 @@ export default function HomePage() {
             >
               Send a message
             </Link>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-t border-white/10 bg-transparent">
+        <Container className="py-14 sm:py-16">
+          <div className="max-w-2xl">
+            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
+              Stay updated
+            </div>
+            <h2 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-white">
+              Get occasional updates
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-white/70">
+              No spam — just occasional insights on web development, iOS apps, and
+              product building. Unsubscribe anytime.
+            </p>
+            <form
+              action="https://formspree.io/f/xredppbg"
+              method="POST"
+              className="mt-6 flex flex-col gap-3 sm:flex-row"
+            >
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="you@example.com"
+                className="h-11 flex-1 rounded-xl border border-white/10 bg-white/5 px-4 text-sm text-white outline-none ring-0 placeholder:text-white/40 focus:border-[var(--accent-2)]"
+              />
+              <button
+                type="submit"
+                className="btn-primary inline-flex h-11 items-center justify-center rounded-full px-6 text-xs font-semibold uppercase tracking-[0.14em] hover:opacity-95"
+              >
+                Subscribe
+              </button>
+            </form>
           </div>
         </Container>
       </section>

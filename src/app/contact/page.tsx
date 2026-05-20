@@ -39,7 +39,7 @@ export default function ContactPage() {
                 },
                 {
                   title: "Response time",
-                  body: "Placeholder: typically within 24–48 hours.",
+                  body: "Typically within 24–48 hours. I'll respond with next steps and any questions.",
                 },
               ].map((s) => (
                 <section

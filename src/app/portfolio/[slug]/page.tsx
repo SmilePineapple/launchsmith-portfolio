@@ -101,6 +101,24 @@ export default async function ProjectPage({
 
             <section className="rounded-3xl border border-white/10 p-7 card-glass">
               <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
+                Results
+              </div>
+              <p className="mt-4 text-sm leading-7 text-white/70">
+                Delivered a polished product with clean architecture, responsive design, and production-ready performance. The solution addressed the core challenges while providing a scalable foundation for future growth.
+              </p>
+            </section>
+
+            <section className="rounded-3xl border border-white/10 p-7 card-glass">
+              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
+                Timeline
+              </div>
+              <p className="mt-4 text-sm leading-7 text-white/70">
+                Built and deployed within the agreed timeline with regular updates and clear communication. Iterative approach ensured quality while meeting deadlines.
+              </p>
+            </section>
+
+            <section className="rounded-3xl border border-white/10 p-7 card-glass">
+              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
                 Tech
               </div>
               <div className="mt-4 flex flex-wrap gap-2">

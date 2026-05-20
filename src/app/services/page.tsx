@@ -22,6 +22,7 @@ const services = [
       "Clean copy layout and clear CTAs",
     ],
     included: ["Landing pages", "Marketing sites", "Portfolio sites", "Content pages"],
+    priceRange: "£2,000 - £8,000",
   },
   {
     title: "Web Apps",
@@ -32,6 +33,7 @@ const services = [
       "Clean UI and maintainable code",
     ],
     included: ["App shells", "CRUD + workflows", "Integrations", "Deployment"],
+    priceRange: "£5,000 - £25,000",
   },
   {
     title: "Mobile Apps",
@@ -42,6 +44,7 @@ const services = [
       "Clean releases and iteration",
     ],
     included: ["MVPs", "Companion apps", "App store prep", "API integration"],
+    priceRange: "£8,000 - £30,000",
   },
   {
     title: "Automation / AI Integrations",
@@ -52,6 +55,7 @@ const services = [
       "Add AI features where they make sense",
     ],
     included: ["Webhook automations", "Internal tools", "AI features", "System glue"],
+    priceRange: "£3,000 - £15,000",
   },
 ] as const;
 
@@ -198,7 +202,10 @@ export default function ServicesPage() {
                   </ul>
                 </div>
               </div>
-              <div className="mt-6">
+              <div className="mt-6 flex items-center justify-between">
+                <div className="text-sm font-semibold text-[var(--accent-2)]">
+                  {s.priceRange}
+                </div>
                 <Link
                   href="/contact"
                   className="text-sm font-semibold text-[var(--accent-2)] hover:underline"

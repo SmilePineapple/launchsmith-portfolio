@@ -81,6 +81,63 @@ export default function AboutPage() {
               ))}
             </div>
 
+            <div className="mt-12">
+              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
+                Process
+              </div>
+              <h2 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-white">
+                How I work
+              </h2>
+              <div className="mt-6 grid gap-4">
+                {[
+                  {
+                    step: "1",
+                    title: "Discovery",
+                    description: "We start with a conversation about what you're building, your goals, and any existing work. I'll ask questions to understand the full scope.",
+                  },
+                  {
+                    step: "2",
+                    title: "Planning",
+                    description: "I'll create a clear plan with timeline, deliverables, and pricing. No surprises — we agree on everything before I start building.",
+                  },
+                  {
+                    step: "3",
+                    title: "Build",
+                    description: "I'll build your project with regular updates and check-ins. You'll see progress throughout the development process.",
+                  },
+                  {
+                    step: "4",
+                    title: "Launch",
+                    description: "We'll test thoroughly, fix any issues, and deploy to production. I'll handle the technical setup so you can focus on your business.",
+                  },
+                  {
+                    step: "5",
+                    title: "Support",
+                    description: "After launch, I'm available for fixes, improvements, and iterations. We can agree on an ongoing support arrangement if needed.",
+                  },
+                ].map((s) => (
+                  <section
+                    key={s.step}
+                    className="rounded-2xl border border-white/10 p-6 card-glass"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--accent-2)] text-xs font-semibold text-white">
+                        {s.step}
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-base font-semibold tracking-tight text-white">
+                          {s.title}
+                        </h3>
+                        <p className="mt-2 text-sm leading-6 text-white/70">
+                          {s.description}
+                        </p>
+                      </div>
+                    </div>
+                  </section>
+                ))}
+              </div>
+            </div>
+
             <div className="mt-10 flex flex-wrap gap-3">
               <Link
                 href="/contact"
@@ -94,6 +151,33 @@ export default function AboutPage() {
               >
                 View work
               </Link>
+            </div>
+
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a
+                href={site.socials.github}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm font-semibold text-white/70 hover:text-white"
+              >
+                GitHub
+              </a>
+              <a
+                href={site.socials.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm font-semibold text-white/70 hover:text-white"
+              >
+                LinkedIn
+              </a>
+              <a
+                href={site.socials.twitter}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm font-semibold text-white/70 hover:text-white"
+              >
+                Twitter
+              </a>
             </div>
 
             <div className="mt-10 text-sm text-white/55">
