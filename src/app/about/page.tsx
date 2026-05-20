@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Launchsmith: a UK web and mobile developer based in Longridge, Preston, specializing in clean websites, web apps, and iOS applications for clients across the UK.",
+    "About Launchsmith: UK web and mobile developer based in Longridge, Preston. Specializing in clean websites, web apps, and iOS applications for clients across Manchester, Liverpool, Leeds, London, and nationwide.",
   alternates: {
     canonical: "/about",
   },
@@ -19,9 +19,12 @@ export default function AboutPage() {
       <Container className="py-14 sm:py-16">
         <div className="grid gap-12 lg:grid-cols-[320px_1fr] lg:items-start">
           <div>
-            <div className="aspect-square w-full max-w-[320px] rounded-3xl border border-white/10 bg-[var(--surface-muted)] card-glass ring-glow" />
-            <div className="mt-4 text-sm text-white/70">
-              Replace this with your headshot later.
+            <div className="aspect-square w-full max-w-[320px] rounded-3xl border border-white/10 bg-[var(--surface-muted)] card-glass ring-glow overflow-hidden">
+              <img
+                src="/headshot.jpeg"
+                alt="Jake Dale-Rourke - Launchsmith"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
           <div className="max-w-2xl">

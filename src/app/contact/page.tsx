@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Launchsmith: UK web and mobile developer based in Longridge, Preston. Get in touch for website development, web apps, iOS apps, and automation projects across the UK.",
+    "Contact Launchsmith: UK web and mobile developer based in Longridge, Preston. Get in touch for website development, web apps, iOS apps, and automation projects across Manchester, Liverpool, Leeds, London, and nationwide.",
   alternates: {
     canonical: "/contact",
   },

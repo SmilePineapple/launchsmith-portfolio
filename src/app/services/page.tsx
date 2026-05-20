@@ -67,8 +67,27 @@ const faq = [
 ] as const;
 
 export default function ServicesPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
   return (
     <div className="bg-transparent">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      </head>
       <Container className="py-14 sm:py-16">
         <div className="max-w-2xl">
           <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: `%s · Launchsmith`,
   },
   description:
-    "UK-based web and mobile developer building clean, modern websites, web apps, and iOS apps. Based in Longridge, Preston, serving clients across the UK with fast turnaround and professional results.",
+    "UK-based web and mobile developer building clean, modern websites, web apps, and iOS apps. Based in Longridge, Preston, serving clients across the UK including Manchester, Liverpool, Leeds, London, and nationwide.",
   keywords: [
     "web developer UK",
     "mobile app developer UK",
@@ -37,6 +37,13 @@ export const metadata: Metadata = {
     "React developer",
     "web application development",
     "UK freelance developer",
+    "Manchester web developer",
+    "Liverpool web developer",
+    "Leeds web developer",
+    "London web developer",
+    "Birmingham web developer",
+    "UK app development",
+    "UK software developer",
   ],
   authors: [{ name: "Launchsmith" }],
   creator: "Launchsmith",
@@ -51,14 +58,14 @@ export const metadata: Metadata = {
     url: "https://launchsmith-portfolio.vercel.app",
     title: "Launchsmith · UK Web & Mobile Developer",
     description:
-      "UK-based web and mobile developer building clean, modern websites, web apps, and iOS apps. Based in Longridge, Preston, serving clients across the UK with fast turnaround and professional results.",
+      "UK-based web and mobile developer building clean, modern websites, web apps, and iOS apps. Based in Longridge, Preston, serving clients across the UK including Manchester, Liverpool, Leeds, London, and nationwide.",
     siteName: "Launchsmith",
   },
   twitter: {
     card: "summary_large_image",
     title: "Launchsmith · UK Web & Mobile Developer",
     description:
-      "UK-based web and mobile developer building clean, modern websites, web apps, and iOS apps. Based in Longridge, Preston, serving clients across the UK with fast turnaround and professional results.",
+      "UK-based web and mobile developer building clean, modern websites, web apps, and iOS apps. Based in Longridge, Preston, serving clients across the UK including Manchester, Liverpool, Leeds, London, and nationwide.",
     creator: "@launchsmith",
   },
   robots: {
@@ -95,7 +102,7 @@ export default function RootLayout({
       addressRegion: "Preston",
       addressCountry: "UK",
     },
-    areaServed: "United Kingdom",
+    areaServed: ["United Kingdom", "Manchester", "Liverpool", "Leeds", "London", "Birmingham"],
     knowsAbout: [
       "Web Development",
       "Mobile App Development",
@@ -104,6 +111,25 @@ export default function RootLayout({
       "Next.js",
       "TypeScript",
       "Web Applications",
+      "SEO",
+      "Automation",
+      "AI Integration",
+    ],
+    sameAs: [
+      "https://github.com/SmilePineapple",
+    ],
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://launchsmith-portfolio.vercel.app/",
+      },
     ],
   };
 
@@ -116,6 +142,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
       </head>
       <body className="min-h-full bg-transparent text-[var(--foreground)]">

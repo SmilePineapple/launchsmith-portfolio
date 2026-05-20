@@ -2,7 +2,7 @@ export const site = {
   name: "Launchsmith",
   role: "Web & Mobile Developer",
   description:
-    "UK-based web and mobile developer building clean, modern websites, web apps, and iOS apps. Based in Longridge, Preston, serving clients across the UK with fast turnaround and professional results.",
+    "UK-based web and mobile developer building clean, modern websites, web apps, and iOS apps. Based in Longridge, Preston, serving clients across the UK including Manchester, Liverpool, Leeds, and nationwide.",
   accent: {
     hex: "#2563eb",
   },
@@ -14,6 +14,15 @@ export const site = {
     "Web Applications",
     "iOS App Development",
     "Automation & AI Integration",
+  ],
+  serviceAreas: [
+    "Preston",
+    "Manchester",
+    "Liverpool",
+    "Leeds",
+    "London",
+    "Birmingham",
+    "United Kingdom",
   ],
 } as const;
 

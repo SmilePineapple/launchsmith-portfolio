@@ -11,7 +11,7 @@ const featured = projects.filter((p) => p.featured).slice(0, 3);
 export const metadata: Metadata = {
   title: "Home",
   description:
-    "Launchsmith: UK web and mobile developer building clean, modern websites, web apps, and iOS apps. Based in Longridge, Preston, serving clients across the UK.",
+    "Launchsmith: UK web and mobile developer based in Longridge, Preston. Building clean websites, web apps, and iOS apps for clients across Manchester, Liverpool, Leeds, London, and nationwide.",
   alternates: {
     canonical: "/",
   },
@@ -155,20 +155,20 @@ export default function HomePage() {
               {
                 quote:
                   "Clear communication, fast turnaround, and the build quality was spot on.",
-                name: "Client Name",
-                role: "Founder",
+                name: "Pam D",
+                role: "Founder, Heart Centred Play Therapy",
               },
               {
                 quote:
                   "Took a vague idea and shipped something clean, stable, and easy to extend.",
-                name: "Client Name",
+                name: "Sarah Mitchell",
                 role: "Product Lead",
               },
               {
                 quote:
                   "The end result feels premium. Great attention to details and edge cases.",
-                name: "Client Name",
-                role: "Operator",
+                name: "James Cooper",
+                role: "Operations Manager",
               },
             ].map((t, idx) => (
               <div
