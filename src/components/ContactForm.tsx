@@ -13,17 +13,13 @@ export function ContactForm() {
     setStatus("submitting");
     setError(null);
 
-    const payload = {
-      name: String(formData.get("name") ?? ""),
-      email: String(formData.get("email") ?? ""),
-      message: String(formData.get("message") ?? ""),
-    };
-
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://formspree.io/f/xredppbg", {
         method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(payload),
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
       });
 
       if (!res.ok) {

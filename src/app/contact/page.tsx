@@ -57,11 +57,6 @@ export default function ContactPage() {
 
           <div>
             <ContactForm />
-            <div className="mt-4 text-xs text-white/55">
-              If email sending isn’t configured yet, submissions may fail in this
-              sandbox. This is expected until you add environment variables in
-              Vercel.
-            </div>
           </div>
         </div>
       </Container>
