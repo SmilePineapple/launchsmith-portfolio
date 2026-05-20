@@ -39,7 +39,15 @@ export default function AboutPage() {
               build clean, modern websites, web applications, and iOS apps for
               clients across the UK. Whether you're a startup founder, small business
               owner, or someone with a great idea, I'll help you turn it into a
-              polished product that actually works.
+              polished product that actually works. Check out my{" "}
+              <Link href="/portfolio" className="text-[var(--accent-2)] hover:underline">
+                portfolio
+              </Link>{" "}
+              to see recent projects, or explore my{" "}
+              <Link href="/services" className="text-[var(--accent-2)] hover:underline">
+                services
+              </Link>{" "}
+              to learn how I can help.
             </p>
             <p className="mt-4 text-lg leading-8 text-white/70">
               I believe in straightforward communication, honest timelines, and

@@ -123,6 +123,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Launchsmith",
+    url: "https://launchsmith-portfolio.vercel.app",
+    description: "UK-based web and mobile developer building clean, modern websites, web apps, and iOS apps. Based in Longridge, Preston, serving clients across the UK.",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://launchsmith-portfolio.vercel.app/search?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -152,6 +165,30 @@ export default function RootLayout({
     sameAs: [
       "https://github.com/SmilePineapple",
     ],
+  };
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Launchsmith",
+    description: "UK web and mobile developer based in Longridge, Preston. Building clean websites, web apps, and iOS apps for clients across the UK.",
+    url: "https://launchsmith-portfolio.vercel.app",
+    email: "hello@launchsmith.dev",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Longridge",
+      addressRegion: "Preston",
+      postalCode: "PR3",
+      addressCountry: "UK",
+    },
+    areaServed: ["United Kingdom", "Manchester", "Liverpool", "Leeds", "London", "Birmingham", "Bristol", "Edinburgh", "Glasgow", "Newcastle", "Sheffield", "Nottingham", "Leicester", "Brighton"],
+    priceRange: "$$",
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
   };
 
   const personSchema = {
@@ -197,7 +234,15 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
         <script
           type="application/ld+json"

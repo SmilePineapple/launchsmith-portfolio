@@ -45,8 +45,19 @@ export default function HomePage() {
                 I build websites, web apps, and iOS apps — clean UX, modern stacks,
                 and a professional finish. Based in Longridge, Preston, I work with
                 clients across the UK including Manchester, Liverpool, Leeds, London,
-                and beyond. Whether you need a new website, a web application, or a
-                mobile app, I'll help you turn your idea into something real. If you
+                and beyond. Whether you need a new{" "}
+                <Link href="/services" className="text-[var(--accent-2)] hover:underline">
+                  website
+                </Link>
+                , a{" "}
+                <Link href="/services" className="text-[var(--accent-2)] hover:underline">
+                  web application
+                </Link>
+                , or a{" "}
+                <Link href="/services" className="text-[var(--accent-2)] hover:underline">
+                  mobile app
+                </Link>
+                , I'll help you turn your idea into something real. If you
                 can describe what you want, we can ship it.
               </p>
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">

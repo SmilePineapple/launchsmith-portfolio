@@ -9,6 +9,11 @@ export const site = {
   url: "https://launchsmith-portfolio.vercel.app",
   location: "Longridge, Preston, UK",
   email: "hello@launchsmith.dev",
+  socials: {
+    github: "https://github.com/SmilePineapple",
+    linkedin: "https://linkedin.com/in/jakedalerourke",
+    twitter: "https://twitter.com/launchsmith",
+  },
   services: [
     "Website Development",
     "Web Applications",

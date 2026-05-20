@@ -15,8 +15,31 @@ export function Footer() {
               </span>
             </div>
             <div className="mt-2 text-sm text-white/70">{site.role}</div>
-            <div className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-white/55">
-              CV (coming soon)
+            <div className="mt-4 flex gap-4">
+              <a
+                href={site.socials.github}
+                target="_blank"
+                rel="noreferrer"
+                className="text-xs font-semibold uppercase tracking-[0.16em] text-white/55 hover:text-white"
+              >
+                GitHub
+              </a>
+              <a
+                href={site.socials.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="text-xs font-semibold uppercase tracking-[0.16em] text-white/55 hover:text-white"
+              >
+                LinkedIn
+              </a>
+              <a
+                href={site.socials.twitter}
+                target="_blank"
+                rel="noreferrer"
+                className="text-xs font-semibold uppercase tracking-[0.16em] text-white/55 hover:text-white"
+              >
+                Twitter
+              </a>
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-x-7 gap-y-3">

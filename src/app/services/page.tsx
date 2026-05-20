@@ -104,12 +104,42 @@ export default function ServicesPage() {
     })),
   };
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Launchsmith Services",
+    description: "Website development, web applications, iOS apps, and automation/AI integration. UK-based developer serving clients across the country with fast, professional builds.",
+    provider: {
+      "@type": "Organization",
+      name: "Launchsmith",
+      url: "https://launchsmith-portfolio.vercel.app",
+    },
+    areaServed: ["United Kingdom", "Manchester", "Liverpool", "Leeds", "London", "Birmingham", "Bristol", "Edinburgh", "Glasgow", "Newcastle", "Sheffield", "Nottingham", "Leicester", "Brighton"],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Development Services",
+      itemListElement: services.map((s, idx) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: s.title,
+          description: s.description,
+        },
+        position: idx + 1,
+      })),
+    },
+  };
+
   return (
     <div className="bg-transparent">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
       </head>
       <Container className="py-14 sm:py-16">
@@ -122,7 +152,15 @@ export default function ServicesPage() {
           </h1>
           <p className="mt-4 text-lg leading-8 text-white/70">
             No packages and no hard pricing here — just a clean conversation about
-            what you need, and a build plan that fits.
+            what you need, and a build plan that fits. Explore my{" "}
+            <Link href="/portfolio" className="text-[var(--accent-2)] hover:underline">
+              portfolio
+            </Link>{" "}
+            to see examples of my work, or{" "}
+            <Link href="/contact" className="text-[var(--accent-2)] hover:underline">
+              get in touch
+            </Link>{" "}
+            to discuss your project.
           </p>
         </div>
 
