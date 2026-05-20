@@ -53,8 +53,16 @@ const services = [
 
 const faq = [
   {
-    q: "What do you need to start?",
-    a: "A short description of what you’re building, any references you like, and your timeline. If you have designs, great — if not, we can start from structure and iterate.",
+    q: "What technologies do you use?",
+    a: "I work with modern stacks: Next.js, React, TypeScript, and Node.js for web. For iOS, I use Swift. I choose tools based on what fits the project best.",
+  },
+  {
+    q: "Do you work with startups?",
+    a: "Yes. I’ve worked with early-stage founders and established businesses. I’m comfortable with fast iteration, MVPs, and scaling up.",
+  },
+  {
+    q: "Can you help with SEO?",
+    a: "Yes. I build with SEO in mind — clean structure, fast performance, proper metadata, and technical best practices. I can also help with content strategy.",
   },
   {
     q: "How long does a typical build take?",
@@ -63,6 +71,18 @@ const faq = [
   {
     q: "Do you offer ongoing support?",
     a: "Yes. We can agree a lightweight support setup after launch (fixes, improvements, iterations).",
+  },
+  {
+    q: "What’s your pricing model?",
+    a: "I work on a project basis — no hourly billing, no surprise invoices. We agree scope and price upfront, and I deliver against that.",
+  },
+  {
+    q: "Do you work with clients outside the UK?",
+    a: "Yes. I’m UK-based but work with clients globally. Remote collaboration is standard for me.",
+  },
+  {
+    q: "Can you help with existing projects?",
+    a: "Yes. I can take over existing codebases, refactor legacy code, or add new features to what you already have.",
   },
 ] as const;
 

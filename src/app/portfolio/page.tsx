@@ -17,9 +17,29 @@ export const metadata: Metadata = {
 const featured = projects.filter((p) => p.featured);
 const more = projects.filter((p) => !p.featured);
 
+const portfolioSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Launchsmith Portfolio",
+  description: "Launchsmith portfolio: View our recent projects including SEO monitoring tools, Gmail downloaders, iOS tournament apps, and more. UK web and mobile developer delivering quality builds.",
+  url: "https://launchsmith-portfolio.vercel.app/portfolio",
+  hasPart: featured.map((project) => ({
+    "@type": "CreativeWork",
+    name: project.title,
+    description: project.summary,
+    url: `https://launchsmith-portfolio.vercel.app/portfolio/${project.slug}`,
+  })),
+};
+
 export default function PortfolioPage() {
   return (
     <div className="bg-transparent">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(portfolioSchema) }}
+        />
+      </head>
       <Container className="py-14 sm:py-16">
         <div className="relative overflow-hidden rounded-[36px] border border-white/10 p-8 card-glass ring-glow sm:p-10">
           <div

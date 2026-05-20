@@ -42,8 +42,42 @@ export const metadata: Metadata = {
     "Leeds web developer",
     "London web developer",
     "Birmingham web developer",
+    "Bristol web developer",
+    "Edinburgh web developer",
+    "Glasgow web developer",
+    "Newcastle web developer",
+    "Sheffield web developer",
+    "Nottingham web developer",
+    "Leicester web developer",
+    "Brighton web developer",
     "UK app development",
     "UK software developer",
+    "UK iOS developer",
+    "UK React developer",
+    "UK Next.js developer",
+    "UK TypeScript developer",
+    "UK web designer",
+    "UK full-stack developer",
+    "UK frontend developer",
+    "UK backend developer",
+    "UK custom web development",
+    "UK business websites",
+    "UK e-commerce development",
+    "UK mobile application development",
+    "UK iPhone app development",
+    "UK iPad app development",
+    "UK Android app development",
+    "UK automation developer",
+    "UK AI integration",
+    "UK SEO services",
+    "UK web optimization",
+    "UK responsive design",
+    "UK progressive web apps",
+    "UK static site generation",
+    "UK serverless development",
+    "UK database development",
+    "UK API development",
+    "UK cloud development",
   ],
   authors: [{ name: "Launchsmith" }],
   creator: "Launchsmith",
@@ -102,7 +136,7 @@ export default function RootLayout({
       addressRegion: "Preston",
       addressCountry: "UK",
     },
-    areaServed: ["United Kingdom", "Manchester", "Liverpool", "Leeds", "London", "Birmingham"],
+    areaServed: ["United Kingdom", "Manchester", "Liverpool", "Leeds", "London", "Birmingham", "Bristol", "Edinburgh", "Glasgow", "Newcastle", "Sheffield", "Nottingham", "Leicester", "Brighton"],
     knowsAbout: [
       "Web Development",
       "Mobile App Development",
@@ -115,6 +149,28 @@ export default function RootLayout({
       "Automation",
       "AI Integration",
     ],
+    sameAs: [
+      "https://github.com/SmilePineapple",
+    ],
+  };
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Jake Dale-Rourke",
+    jobTitle: "Web & Mobile Developer",
+    worksFor: {
+      "@type": "Organization",
+      name: "Launchsmith",
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Longridge",
+      addressRegion: "Preston",
+      addressCountry: "UK",
+    },
+    email: "hello@launchsmith.dev",
+    url: "https://launchsmith-portfolio.vercel.app",
     sameAs: [
       "https://github.com/SmilePineapple",
     ],
@@ -142,6 +198,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
         <script
           type="application/ld+json"
