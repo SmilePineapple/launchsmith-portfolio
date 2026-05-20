@@ -151,7 +151,6 @@ export const projects: Project[] = [
     coverImage: "/portfolio/autocare-preston/cover.png",
     galleryImages: [
       "/portfolio/autocare-preston/cover.png",
-      "/portfolio/autocare-preston/page.png",
     ],
     external: { label: "Visit site", url: "https://autocarepreston.co.uk/" },
   },

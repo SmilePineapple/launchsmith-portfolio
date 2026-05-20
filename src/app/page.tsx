@@ -207,9 +207,15 @@ export default function HomePage() {
               },
               {
                 quote:
+                  "Professional work with great attention to detail. The site looks fantastic and works perfectly on all devices.",
+                name: "Martin K",
+                role: "Owner, AutoCare Preston",
+              },
+              {
+                quote:
                   "The end result feels premium. Great attention to details and edge cases.",
-                name: "James Cooper",
-                role: "Operations Manager",
+                name: "Jill C",
+                role: "BulkZip User",
               },
             ].map((t, idx) => (
               <div
