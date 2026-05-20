@@ -28,6 +28,10 @@ export const metadata: Metadata = {
   },
   description:
     "UK-based web and mobile developer building clean, modern websites, web apps, and iOS apps. Based in Longridge, Preston, serving clients across the UK including Manchester, Liverpool, Leeds, London, and nationwide.",
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/logo.svg",
+  },
   keywords: [
     "web developer UK",
     "mobile app developer UK",

@@ -43,7 +43,7 @@ export const projects: Project[] = [
   {
     slug: "bulkzip",
     title: "BulkZip",
-    category: "Productivity",
+    category: "Web App",
     summary:
       "Download Gmail attachments in bulk into one clean ZIP. Filter emails, preview attachments, export fast.",
     problem:
@@ -131,6 +131,29 @@ export const projects: Project[] = [
       "/portfolio/heartcentred-playtherapy/page.png",
     ],
     external: { label: "Visit site", url: "https://www.heartcentredplaytherapy.co.uk/" },
+  },
+  {
+    slug: "autocare-preston",
+    title: "AutoCare Preston",
+    category: "Website",
+    summary:
+      "Professional car service website for Martin K, featuring services, booking information, and contact details.",
+    problem:
+      "Local car service businesses need an online presence to attract customers, communicate services clearly, and provide easy booking/contact options.",
+    solution:
+      "Built a clean, professional website that highlights services, pricing transparency, and makes it easy for customers to get in touch or book appointments.",
+    stack: ["Next.js", "React", "Responsive Design"],
+    highlights: [
+      "Clear service presentation and pricing",
+      "Mobile-friendly booking flow",
+      "Local SEO optimisation for Preston area",
+    ],
+    coverImage: "/portfolio/autocare-preston/cover.png",
+    galleryImages: [
+      "/portfolio/autocare-preston/cover.png",
+      "/portfolio/autocare-preston/page.png",
+    ],
+    external: { label: "Visit site", url: "https://autocarepreston.co.uk/" },
   },
   {
     slug: "cm-confapp",

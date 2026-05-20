@@ -170,14 +170,6 @@ export default function AboutPage() {
               >
                 LinkedIn
               </a>
-              <a
-                href={site.socials.twitter}
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm font-semibold text-white/70 hover:text-white"
-              >
-                Twitter
-              </a>
             </div>
 
             <div className="mt-10 text-sm text-white/55">
