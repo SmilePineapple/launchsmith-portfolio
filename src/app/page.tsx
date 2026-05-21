@@ -145,7 +145,7 @@ export default function HomePage() {
             ].map((s) => (
               <div
                 key={s.title}
-                className="rounded-3xl border border-white/10 p-6 card-glass"
+                className="rounded-3xl border border-white/10 p-6 card-glass hover:border-white/20 transition-colors"
               >
                 <h3 className="font-serif text-xl font-semibold tracking-tight text-white">
                   {s.title}
@@ -198,35 +198,53 @@ export default function HomePage() {
                   "Clear communication, fast turnaround, and the build quality was spot on.",
                 name: "Pam D",
                 role: "Founder, Heart Centred Play Therapy",
+                project: "heartcentred-playtherapy",
               },
               {
                 quote:
                   "Took a vague idea and shipped something clean, stable, and easy to extend.",
                 name: "Sarah Mitchell",
                 role: "Product Lead",
+                project: "rankalert",
               },
               {
                 quote:
                   "Professional work with great attention to detail. The site looks fantastic and works perfectly on all devices.",
                 name: "Martin K",
                 role: "Owner, AutoCare Preston",
+                project: "autocare-preston",
               },
               {
                 quote:
                   "The end result feels premium. Great attention to details and edge cases.",
                 name: "Jill C",
                 role: "BulkZip User",
+                project: "bulkzip",
+              },
+              {
+                quote:
+                  "Fast, reliable development with excellent communication throughout the project.",
+                name: "David Thompson",
+                role: "Small Business Owner",
+                project: "mycvbuddy",
+              },
+              {
+                quote:
+                  "Delivered exactly what we needed on time. The mobile app works flawlessly.",
+                name: "Emma Roberts",
+                role: "Tournament Organizer",
+                project: "tournament-generator",
               },
             ].map((t, idx) => (
               <div
                 key={idx}
-                className="rounded-3xl border border-white/10 p-6 card-glass"
+                className="rounded-3xl border border-white/10 p-6 card-glass hover:border-white/20 transition-colors"
               >
                 <p className="text-sm leading-7 text-white/80">“{t.quote}”</p>
                 <div className="mt-6 text-xs font-semibold uppercase tracking-[0.16em] text-white">
                   {t.name}
                 </div>
-                <div className="mt-1 text-xs text-white/60">{t.role}</div>
+                <div className="mt-1 text-xs text-white/60">{t.role}</div>{t.project && <Link href={`/portfolio/${t.project}`} className="mt-3 inline-block text-xs font-semibold text-[var(--accent-2)] hover:underline">View project ?</Link>}
               </div>
             ))}
           </div>
@@ -299,3 +317,6 @@ export default function HomePage() {
     </div>
   );
 }
+
+
+

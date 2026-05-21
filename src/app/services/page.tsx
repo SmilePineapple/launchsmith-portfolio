@@ -206,12 +206,20 @@ export default function ServicesPage() {
                 <div className="text-sm font-semibold text-[var(--accent-2)]">
                   {s.priceRange}
                 </div>
-                <Link
-                  href="/contact"
-                  className="text-sm font-semibold text-[var(--accent-2)] hover:underline"
-                >
-                  Ask about {s.title.toLowerCase()}
-                </Link>
+                <div className="flex items-center gap-3">
+                  <Link
+                    href={`/services/${s.title.toLowerCase().replace(/ /g, "-").replace(" / ", "-")}`}
+                    className="text-sm font-semibold text-[var(--accent-2)] hover:underline"
+                  >
+                    Find out more
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="text-sm font-semibold text-[var(--accent-2)] hover:underline"
+                  >
+                    Ask about {s.title.toLowerCase()}
+                  </Link>
+                </div>
               </div>
             </section>
           ))}
@@ -219,7 +227,7 @@ export default function ServicesPage() {
 
         <div className="mt-16 max-w-3xl">
           <h2 className="text-xl font-semibold tracking-tight text-white">FAQ</h2>
-          <div className="mt-6 grid gap-4">
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {faq.map((item) => (
               <section
                 key={item.q}

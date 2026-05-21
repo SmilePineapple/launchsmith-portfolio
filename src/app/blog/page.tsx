@@ -74,8 +74,9 @@ export default function BlogPage() {
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post) => (
-            <article
+            <Link
               key={post.slug}
+              href={`/blog/${post.slug}`}
               className="group overflow-hidden rounded-3xl border border-white/10 card-glass transition-transform hover:-translate-y-0.5"
             >
               <div className="p-6">
@@ -94,7 +95,7 @@ export default function BlogPage() {
                   <span>{post.readTime}</span>
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
 

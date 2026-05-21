@@ -32,14 +32,6 @@ export function Footer() {
               >
                 LinkedIn
               </a>
-              <a
-                href={site.socials.twitter}
-                target="_blank"
-                rel="noreferrer"
-                className="text-xs font-semibold uppercase tracking-[0.16em] text-white/55 hover:text-white"
-              >
-                Twitter
-              </a>
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-x-7 gap-y-3">
