@@ -1,0 +1,146 @@
+# Launchsmith Portfolio - AI Agent Site Description
+
+## Site Overview
+Launchsmith is a UK-based web and mobile developer portfolio website showcasing professional development services and past projects. The site is built with Next.js 14 and serves as a marketing platform for Jake Dale-Rourke, a developer based in Longridge, Preston.
+
+## Purpose
+- Showcase development services (websites, web apps, mobile apps, automation/AI)
+- Display portfolio of completed projects
+- Provide information about the developer
+- Generate leads through contact forms
+- Share industry insights through blog posts
+
+## Target Audience
+- Startup founders
+- Small business owners in the UK
+- Companies needing web or mobile development
+- Individuals with app ideas
+- Businesses in Preston, Manchester, Liverpool, Leeds, London, and nationwide
+
+## Important Pages
+
+### Homepage (/)
+- Landing page with hero section
+- Featured projects showcase
+- Client testimonials with project links
+- Services overview
+- Contact call-to-action
+- Newsletter signup
+
+### Portfolio (/portfolio)
+- Lists all completed projects
+- Filterable by category (Website, Web App, iOS App, SEO Monitoring)
+- Featured projects section
+- More projects section
+- Each project card links to individual project detail pages
+
+### Portfolio Detail Pages (/portfolio/[slug])
+- Individual project case studies
+- Includes: problem, solution, highlights, tech stack, gallery
+- External links to live projects
+- Contact CTA for similar projects
+- Projects include: RankAlert, BulkZip, Tournament Generator, AutoCare Preston, and more
+
+### Services (/services)
+- Lists 4 main service categories with pricing
+- Each service has description, outcomes, and included features
+- FAQ section
+- "Find out more" buttons link to individual service pages
+- Contact CTA
+
+### Individual Service Pages
+- /services/websites - Website development details (£250-£8,000)
+- /services/web-apps - Web application development (£1,000-£15,000)
+- /services/mobile-apps - iOS/mobile app development (£500-£30,000)
+- /services/automation - Automation & AI integration (£1,000-£15,000)
+
+### About (/about)
+- Personal introduction to Jake Dale-Rourke
+- Work process (5-step workflow)
+- Social proof links (GitHub, LinkedIn)
+- Location: Longridge, Preston, UK
+
+### Blog (/blog)
+- Lists 5 SEO-focused blog posts
+- Categories: Pricing, Mobile, Web Development, SEO, Accessibility
+- Each post links to individual blog page
+- Newsletter signup form
+
+### Individual Blog Pages
+- /blog/how-much-does-a-website-cost-in-uk
+- /blog/ios-vs-android-app-development
+- /blog/next-js-for-business-websites
+- /blog/seo-fundamentals-for-uk-businesses
+- /blog/building-accessible-websites
+
+### Contact (/contact)
+- Contact form for enquiries
+- Form uses FormSpree for submission
+- Success redirect to /thanks
+
+### Thanks (/thanks)
+- Thank you page after form submission
+
+## Navigation Structure
+- Header navigation: Home, Portfolio, About, Services, Blog, Contact
+- Footer navigation: Links to all main pages
+- Social links in footer: GitHub, LinkedIn
+- All pages have "Back to..." links for navigation
+
+## Key Sections
+- Hero sections on homepage and service pages
+- Testimonials with project links
+- Project gallery with images
+- Service pricing ranges
+- Newsletter signup forms
+- Contact forms
+
+## Technology Stack
+- Next.js 14 with App Router
+- React
+- TypeScript
+- Tailwind CSS
+- Vercel hosting
+- FormSpree for forms
+
+## SEO Features
+- Proper meta tags on all pages
+- Semantic HTML structure
+- Blog posts for content marketing
+- Service pages with keyword-rich content
+- Local SEO for UK locations
+- Canonical URLs
+
+## Contact Information
+- Email: hello@launchsmith.dev
+- Location: Longridge, Preston, UK
+- GitHub: https://github.com/SmilePineapple
+- LinkedIn: https://linkedin.com/in/jakedalerourke
+
+## Service Areas
+Serves clients across the UK including:
+- Preston, Longridge, Ribble Valley
+- Manchester, Liverpool, Leeds
+- London, Birmingham, Bristol
+- Edinburgh, Glasgow, Newcastle
+- And nationwide
+
+## Pricing Transparency
+- Websites: £250 - £8,000
+- Web Apps: £1,000 - £15,000
+- Mobile Apps: £500 - £30,000
+- Automation/AI: £1,000 - £15,000
+
+## Design Style
+- Dark theme with cyan accent colors
+- Glass-morphism card effects
+- Rounded corners (rounded-3xl)
+- Responsive design for mobile, tablet, desktop
+- Clean, modern aesthetic
+
+## Accessibility
+- Semantic HTML
+- Proper heading hierarchy
+- Alt text on images
+- Keyboard navigation support
+- Color contrast considerations
