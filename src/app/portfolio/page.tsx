@@ -15,34 +15,30 @@ const categories = ["All", "Website", "Web App", "iOS App"];
 export default function PortfolioPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const filteredFeatured = selectedCategory === "All"
-    ? featured
-    : featured.filter((p) => p.category === selectedCategory);
+  const filteredFeatured =
+    selectedCategory === "All"
+      ? featured
+      : featured.filter((p) => p.category === selectedCategory);
 
-  const filteredMore = selectedCategory === "All"
-    ? more
-    : more.filter((p) => p.category === selectedCategory);
+  const filteredMore =
+    selectedCategory === "All"
+      ? more
+      : more.filter((p) => p.category === selectedCategory);
 
   return (
     <div className="bg-transparent">
       <Container className="py-14 sm:py-16">
-        <div className="relative overflow-hidden rounded-[36px] border border-white/10 p-8 card-glass ring-glow sm:p-10">
-          <div
-            aria-hidden
-            className="orb pointer-events-none absolute -right-32 -top-28 h-96 w-96 rounded-full bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.5),transparent_70%)] blur-2xl"
-          />
-          <div className="relative max-w-2xl">
-            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
-              Portfolio
-            </div>
-            <h1 className="mt-3 font-serif text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-              Selected work
+        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+          <div>
+            <div className="section-label">Portfolio</div>
+            <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+              Work shipped across web, mobile, and automation.
             </h1>
-            <p className="mt-4 text-lg leading-8 text-white/70">
-              A mix of web products, websites, and iOS apps — with clean case studies and
-              direct links to each live project.
-            </p>
           </div>
+          <p className="max-w-2xl text-lg leading-8 text-white/70">
+            A selection of live products, client websites, and iOS apps. Each project
+            focuses on clear UX, useful scope, and a maintainable path after launch.
+          </p>
         </div>
 
         <div className="mt-10">
@@ -51,9 +47,9 @@ export default function PortfolioPage() {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] rounded-full transition-colors ${
+                className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] transition-colors ${
                   selectedCategory === category
-                    ? "bg-[var(--accent-2)] text-white"
+                    ? "bg-white text-black"
                     : "border border-white/10 text-white/70 hover:border-white/30 hover:text-white"
                 }`}
               >
@@ -65,7 +61,7 @@ export default function PortfolioPage() {
 
         <div className="mt-8">
           <div className="flex items-end justify-between gap-4">
-            <h2 className="font-serif text-2xl font-semibold tracking-tight text-white">
+            <h2 className="text-2xl font-semibold tracking-tight text-white">
               Featured
             </h2>
           </div>
@@ -78,13 +74,10 @@ export default function PortfolioPage() {
 
         <div className="mt-16">
           <div className="flex items-end justify-between gap-4">
-            <h2 className="font-serif text-2xl font-semibold tracking-tight text-white">
+            <h2 className="text-2xl font-semibold tracking-tight text-white">
               More projects
             </h2>
-            <Link
-              href="/contact"
-              className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent-2)] hover:underline"
-            >
+            <Link href="/contact" className="text-link text-sm">
               Contact
             </Link>
           </div>

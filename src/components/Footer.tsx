@@ -5,12 +5,13 @@ import { navItems, site } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-black/20 backdrop-blur">
+    <footer className="border-t border-white/10 bg-black/18">
       <Container className="py-10">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <div className="font-serif text-lg font-semibold tracking-tight text-white">
-              <span className="bg-gradient-to-br from-white via-white to-[var(--accent-2)] bg-clip-text text-transparent">
+            <div className="text-base font-semibold tracking-tight text-white">
+              <span className="inline-flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-[var(--accent-2)]" />
                 {site.name}
               </span>
             </div>
@@ -20,7 +21,7 @@ export function Footer() {
                 href={site.socials.github}
                 target="_blank"
                 rel="noreferrer"
-                className="text-xs font-semibold uppercase tracking-[0.16em] text-white/55 hover:text-white"
+                className="text-sm font-medium text-white/55 hover:text-white"
               >
                 GitHub
               </a>
@@ -28,7 +29,7 @@ export function Footer() {
                 href={site.socials.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="text-xs font-semibold uppercase tracking-[0.16em] text-white/55 hover:text-white"
+                className="text-sm font-medium text-white/55 hover:text-white"
               >
                 LinkedIn
               </a>
@@ -39,7 +40,7 @@ export function Footer() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-xs font-semibold uppercase tracking-[0.16em] text-white/70 hover:text-white"
+                className="text-sm font-medium text-white/62 hover:text-white"
               >
                 {item.label}
               </Link>
@@ -47,7 +48,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-10 text-xs text-white/55">
-          © {new Date().getFullYear()} {site.name}
+          Copyright {new Date().getFullYear()} {site.name}
         </div>
       </Container>
     </footer>

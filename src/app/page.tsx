@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -7,6 +8,30 @@ import { projects } from "@/lib/projects";
 import { site } from "@/lib/site";
 
 const featured = projects.filter((p) => p.featured).slice(0, 3);
+const recent = projects.slice(0, 4);
+
+const services = [
+  {
+    title: "Websites",
+    desc: "Fast marketing sites with clean messaging, sharp responsive layouts, and a structure that supports search.",
+    href: "/services/websites",
+  },
+  {
+    title: "Web Apps",
+    desc: "Dashboards, portals, internal tools, and product workflows with maintainable foundations.",
+    href: "/services/web-apps",
+  },
+  {
+    title: "Mobile Apps",
+    desc: "Polished iOS and cross-platform products shaped around speed, clarity, and release quality.",
+    href: "/services/mobile-apps",
+  },
+  {
+    title: "Automation / AI",
+    desc: "API integrations, workflow automation, and practical AI features that remove repeated manual work.",
+    href: "/services/automation",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Home",
@@ -22,156 +47,130 @@ export default function HomePage() {
     <div className="bg-transparent">
       <section className="border-b border-white/10">
         <Container className="py-16 sm:py-24">
-          <div className="relative overflow-hidden rounded-[36px] border border-white/10 p-8 card-glass ring-glow sm:p-12">
-            <div
-              aria-hidden
-              className="orb pointer-events-none absolute -left-28 -top-28 h-80 w-80 rounded-full bg-[radial-gradient(circle_at_center,rgba(109,40,217,0.75),transparent_70%)] blur-2xl"
-            />
-            <div
-              aria-hidden
-              className="orb2 pointer-events-none absolute -right-36 top-8 h-96 w-96 rounded-full bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.55),transparent_70%)] blur-2xl"
-            />
-            <div className="relative max-w-3xl">
-              <div className="chip inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
-                <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent-2)]" />
-                {site.role}
-              </div>
-              <h1 className="mt-7 font-serif text-5xl font-semibold tracking-tight sm:text-6xl">
-                <span className="bg-gradient-to-br from-white via-white to-[var(--accent-2)] bg-clip-text text-transparent">
-                  Build. Launch. Iterate.
-                </span>
+          <div className="grid gap-10 lg:grid-cols-[1fr_430px] lg:items-center">
+            <div className="max-w-3xl">
+              <div className="section-label">{site.role}</div>
+              <h1 className="mt-5 text-5xl font-semibold tracking-tight text-white sm:text-6xl">
+                Websites, apps, and automation built with product-level care.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70">
-                I build websites, web apps, and iOS apps — clean UX, modern stacks,
-                and a professional finish. Based in Longridge, Preston, I work with
-                clients across the UK including Manchester, Liverpool, Leeds, London,
-                and beyond. Whether you need a new{" "}
-                <Link href="/services" className="text-[var(--accent-2)] hover:underline">
-                  website
-                </Link>
-                , a{" "}
-                <Link href="/services" className="text-[var(--accent-2)] hover:underline">
-                  web application
-                </Link>
-                , or a{" "}
-                <Link href="/services" className="text-[var(--accent-2)] hover:underline">
-                  mobile app
-                </Link>
-                , I'll help you turn your idea into something real. If you
-                can describe what you want, we can ship it.
+                I am Jake, a UK web and mobile developer based near Preston. I help
+                founders and small teams turn ideas into clean, reliable digital
+                products with clear UX, modern engineering, and a launch-ready finish.
               </p>
-              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/contact"
-                  className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-7 text-xs font-semibold uppercase tracking-[0.14em] hover:opacity-95"
+                  className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-7 text-sm font-semibold hover:opacity-95"
                 >
-                  Send a message
+                  Discuss a project
                 </Link>
                 <Link
                   href="/portfolio"
-                  className="btn-secondary inline-flex h-12 items-center justify-center rounded-full border border-white/10 px-7 text-xs font-semibold uppercase tracking-[0.14em] text-white hover:bg-white/10"
+                  className="btn-secondary inline-flex h-12 items-center justify-center rounded-full border border-white/10 px-7 text-sm font-semibold text-white hover:bg-white/10"
                 >
-                  View work
+                  View recent work
                 </Link>
+              </div>
+              <div className="mt-10 grid gap-4 border-t border-white/10 pt-8 sm:grid-cols-3">
+                {[
+                  ["12+", "launched projects"],
+                  ["UK", "based and remote-ready"],
+                  ["Web + mobile", "from one technical partner"],
+                ].map(([stat, label]) => (
+                  <div key={stat}>
+                    <div className="text-2xl font-semibold tracking-tight text-white">
+                      {stat}
+                    </div>
+                    <div className="mt-1 text-sm text-white/55">{label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="panel p-3">
+              <div className="grid gap-3">
+                {recent.map((project) => (
+                  <Link
+                    key={project.slug}
+                    href={`/portfolio/${project.slug}`}
+                    className="group grid grid-cols-[96px_1fr] gap-4 rounded-xl border border-white/8 bg-black/18 p-3 transition hover:border-white/18 hover:bg-white/[0.045]"
+                  >
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-white/[0.035]">
+                      <Image
+                        src={project.coverImage}
+                        alt={`${project.title} screenshot`}
+                        fill
+                        sizes="96px"
+                        className={
+                          project.category === "iOS App"
+                            ? "object-contain p-2"
+                            : "object-cover"
+                        }
+                      />
+                    </div>
+                    <div className="min-w-0 self-center">
+                      <div className="text-xs font-semibold uppercase tracking-[0.1em] text-white/45">
+                        {project.category}
+                      </div>
+                      <div className="mt-1 truncate text-sm font-semibold text-white group-hover:text-[var(--accent-2)]">
+                        {project.title}
+                      </div>
+                      <div className="mt-1 line-clamp-2 text-xs leading-5 text-white/55">
+                        {project.summary}
+                      </div>
+                    </div>
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="border-b border-white/10 bg-transparent">
-        <Container className="py-10">
-          <div className="text-center">
-            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
-              Trusted by
-            </div>
-            <div className="mt-6 flex flex-wrap justify-center gap-8 sm:gap-12">
-              {[
-                "Startups",
-                "Small Businesses",
-                "Founders",
-                "Product Teams",
-                "Marketing Agencies",
-                "E-commerce Brands",
-              ].map((client) => (
-                <div
-                  key={client}
-                  className="text-sm font-semibold tracking-tight text-white/40"
-                >
-                  {client}
-                </div>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-transparent">
+      <section className="border-b border-white/10">
         <Container className="py-14 sm:py-16">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
-                Services
-              </div>
-              <h2 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-white">
-                What I build
+              <div className="section-label">Services</div>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
+                Practical builds, not bloated packages
               </h2>
             </div>
-            <Link
-              href="/services"
-              className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent-2)] hover:underline"
-            >
+            <Link href="/services" className="text-link text-sm">
               See all services
             </Link>
           </div>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                title: "Websites",
-                desc: "Fast, SEO-friendly sites with crisp design and clear messaging. I build responsive websites that work beautifully on all devices, helping you reach more customers across the UK.",
-              },
-              {
-                title: "Web Apps",
-                desc: "Full-stack builds with auth, dashboards, and scalable foundations. From internal tools to customer-facing platforms, I create web applications that solve real business problems.",
-              },
-              {
-                title: "Mobile Apps",
-                desc: "Polished iOS/Android apps with great UX and solid performance. I build native iOS apps and cross-platform mobile solutions that users love to use.",
-              },
-              {
-                title: "Automation / AI",
-                desc: "Integrations, workflows, and AI features that remove busywork. I connect your tools, automate repetitive tasks, and add AI capabilities where they make sense.",
-              },
-            ].map((s) => (
-              <div
+          <div className="mt-10 divide-y divide-white/10 border-y border-white/10">
+            {services.map((s) => (
+              <Link
                 key={s.title}
-                className="rounded-3xl border border-white/10 p-6 card-glass hover:border-white/20 transition-colors"
+                href={s.href}
+                className="grid gap-3 py-6 transition hover:bg-white/[0.025] sm:grid-cols-[220px_1fr_auto] sm:items-center"
               >
-                <h3 className="font-serif text-xl font-semibold tracking-tight text-white">
+                <h3 className="text-lg font-semibold tracking-tight text-white">
                   {s.title}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-white/70">{s.desc}</p>
-              </div>
+                <p className="max-w-2xl text-sm leading-6 text-white/64">{s.desc}</p>
+                <span className="text-sm font-medium text-[var(--accent-2)]">
+                  Learn more
+                </span>
+              </Link>
             ))}
           </div>
         </Container>
       </section>
 
-      <section className="border-y border-white/10 bg-transparent">
+      <section className="border-b border-white/10">
         <Container className="py-14 sm:py-16">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
-                Selected work
-              </div>
-              <h2 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-white">
-                Featured projects
+              <div className="section-label">Selected work</div>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
+                Recent launches and product work
               </h2>
             </div>
-            <Link
-              href="/portfolio"
-              className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent-2)] hover:underline"
-            >
+            <Link href="/portfolio" className="text-link text-sm">
               Browse portfolio
             </Link>
           </div>
@@ -183,140 +182,62 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section>
+      <section className="border-b border-white/10">
         <Container className="py-14 sm:py-16">
-          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
-            Testimonials
-          </div>
-          <h2 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-white">
-            What clients say
-          </h2>
-          <div className="mt-10 grid gap-5 lg:grid-cols-3">
-            {[
-              {
-                quote:
-                  "Clear communication, fast turnaround, and the build quality was spot on.",
-                name: "Pam D",
-                role: "Founder, Heart Centred Play Therapy",
-                project: "heartcentred-playtherapy",
-              },
-              {
-                quote:
-                  "Took a vague idea and shipped something clean, stable, and easy to extend.",
-                name: "Sarah Mitchell",
-                role: "Product Lead",
-                project: "rankalert",
-              },
-              {
-                quote:
-                  "Professional work with great attention to detail. The site looks fantastic and works perfectly on all devices.",
-                name: "Martin K",
-                role: "Owner, AutoCare Preston",
-                project: "autocare-preston",
-              },
-              {
-                quote:
-                  "The end result feels premium. Great attention to details and edge cases.",
-                name: "Jill C",
-                role: "BulkZip User",
-                project: "bulkzip",
-              },
-              {
-                quote:
-                  "Fast, reliable development with excellent communication throughout the project.",
-                name: "David Thompson",
-                role: "Small Business Owner",
-                project: "mycvbuddy",
-              },
-              {
-                quote:
-                  "Delivered exactly what we needed on time. The mobile app works flawlessly.",
-                name: "Emma Roberts",
-                role: "Tournament Organizer",
-                project: "tournament-generator",
-              },
-            ].map((t, idx) => (
-              <div
-                key={idx}
-                className="rounded-3xl border border-white/10 p-6 card-glass hover:border-white/20 transition-colors"
-              >
-                <p className="text-sm leading-7 text-white/80">“{t.quote}”</p>
-                <div className="mt-6 text-xs font-semibold uppercase tracking-[0.16em] text-white">
-                  {t.name}
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+            <div>
+              <div className="section-label">Process</div>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
+                A direct route from idea to launch
+              </h2>
+              <p className="mt-4 text-sm leading-7 text-white/64">
+                You get a clear plan, regular progress updates, and a build that is
+                shaped around the real product problem instead of a stack of generic
+                deliverables.
+              </p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                ["01", "Shape", "Clarify the audience, must-have flows, constraints, and launch goal."],
+                ["02", "Build", "Design and develop in tight loops with visible progress and plain-English decisions."],
+                ["03", "Launch", "Test, polish, deploy, and leave the project in a maintainable state."],
+                ["04", "Iterate", "Improve the product after launch with analytics, feedback, and practical next steps."],
+              ].map(([step, title, body]) => (
+                <div key={step} className="rounded-[18px] border border-white/10 p-5">
+                  <div className="text-xs font-semibold text-[var(--accent-2)]">
+                    {step}
+                  </div>
+                  <h3 className="mt-3 text-base font-semibold text-white">{title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-white/62">{body}</p>
                 </div>
-                <div className="mt-1 text-xs text-white/60">{t.role}</div>{t.project && <Link href={`/portfolio/${t.project}`} className="mt-3 inline-block text-xs font-semibold text-[var(--accent-2)] hover:underline">View project ?</Link>}
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </Container>
       </section>
 
-      <section className="border-t border-white/10 bg-transparent">
+      <section>
         <Container className="py-14 sm:py-16">
-          <div className="relative overflow-hidden flex flex-col items-start justify-between gap-6 rounded-[36px] border border-white/10 p-8 card-glass ring-glow sm:flex-row sm:items-center">
-            <div
-              aria-hidden
-              className="orb pointer-events-none absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.32),transparent_70%)] blur-2xl"
-            />
+          <div className="panel grid gap-6 p-7 sm:grid-cols-[1fr_auto] sm:items-center sm:p-8">
             <div>
-              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
-                Contact
-              </div>
-              <h2 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-white">
+              <div className="section-label">Contact</div>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
                 Have something to build?
               </h2>
-              <p className="mt-2 text-sm text-white/70">
-                Send a quick message with what you're building and your timeline.
+              <p className="mt-2 text-sm leading-6 text-white/64">
+                Send a quick message with the idea, timeline, and any useful links.
+                I will reply with next steps and the questions that matter.
               </p>
             </div>
             <Link
               href="/contact"
-              className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-7 text-xs font-semibold uppercase tracking-[0.14em] hover:opacity-95"
+              className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-7 text-sm font-semibold hover:opacity-95"
             >
               Send a message
             </Link>
           </div>
         </Container>
       </section>
-
-      <section className="border-t border-white/10 bg-transparent">
-        <Container className="py-14 sm:py-16">
-          <div className="max-w-2xl">
-            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
-              Stay updated
-            </div>
-            <h2 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-white">
-              Get occasional updates
-            </h2>
-            <p className="mt-4 text-sm leading-7 text-white/70">
-              No spam — just occasional insights on web development, iOS apps, and
-              product building. Unsubscribe anytime.
-            </p>
-            <form
-              action="https://formspree.io/f/xredppbg"
-              method="POST"
-              className="mt-6 flex flex-col gap-3 sm:flex-row"
-            >
-              <input
-                type="email"
-                name="email"
-                required
-                placeholder="you@example.com"
-                className="h-11 flex-1 rounded-xl border border-white/10 bg-white/5 px-4 text-sm text-white outline-none ring-0 placeholder:text-white/40 focus:border-[var(--accent-2)]"
-              />
-              <button
-                type="submit"
-                className="btn-primary inline-flex h-11 items-center justify-center rounded-full px-6 text-xs font-semibold uppercase tracking-[0.14em] hover:opacity-95"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </Container>
-      </section>
     </div>
   );
 }
-
-
-

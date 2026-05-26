@@ -38,14 +38,14 @@ export function ContactForm() {
   }
 
   return (
-    <div className="rounded-2xl border border-white/10 p-6 card-glass">
+    <div className="panel p-6">
       {status === "success" ? (
         <div>
           <h2 className="text-base font-semibold tracking-tight text-white">
             Message sent
           </h2>
           <p className="mt-2 text-sm leading-6 text-white/70">
-            Thanks — I’ll get back to you as soon as I can.
+            Thanks - I will get back to you as soon as I can.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
@@ -77,7 +77,7 @@ export function ContactForm() {
               id="name"
               name="name"
               required
-              className="mt-2 h-11 w-full rounded-xl border border-white/10 bg-white/5 px-4 text-sm text-white outline-none ring-0 placeholder:text-white/40 focus:border-[var(--accent-2)]"
+              className="mt-2 h-11 w-full rounded-xl border border-white/10 bg-white/[0.035] px-4 text-sm text-white outline-none ring-0 placeholder:text-white/40 focus:border-[var(--accent-2)]"
               placeholder="Your name"
             />
           </div>
@@ -90,7 +90,7 @@ export function ContactForm() {
               name="email"
               required
               type="email"
-              className="mt-2 h-11 w-full rounded-xl border border-white/10 bg-white/5 px-4 text-sm text-white outline-none ring-0 placeholder:text-white/40 focus:border-[var(--accent-2)]"
+              className="mt-2 h-11 w-full rounded-xl border border-white/10 bg-white/[0.035] px-4 text-sm text-white outline-none ring-0 placeholder:text-white/40 focus:border-[var(--accent-2)]"
               placeholder="you@example.com"
             />
           </div>
@@ -106,13 +106,13 @@ export function ContactForm() {
               name="message"
               required
               rows={6}
-              className="mt-2 w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none ring-0 placeholder:text-white/40 focus:border-[var(--accent-2)]"
+              className="mt-2 w-full resize-none rounded-xl border border-white/10 bg-white/[0.035] px-4 py-3 text-sm text-white outline-none ring-0 placeholder:text-white/40 focus:border-[var(--accent-2)]"
               placeholder="What do you want to build?"
             />
           </div>
 
           {status === "error" && (
-            <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+            <div className="rounded-xl border border-red-300/25 bg-red-500/10 px-4 py-3 text-sm text-red-100">
               {error ?? "Message failed to send."}
             </div>
           )}
@@ -126,7 +126,7 @@ export function ContactForm() {
               {status === "submitting" ? "Sending..." : "Send message"}
             </button>
             <div className="text-sm text-white/55">
-              You’ll see a confirmation here after submit.
+              You will see a confirmation here after submit.
             </div>
           </div>
         </form>

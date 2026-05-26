@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -31,7 +32,7 @@ export default function BlogPost() {
               <span>5 min read</span>
             </div>
             <h1 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-              Building Accessible Websites: A Developer's Guide
+              Building Accessible Websites: A Developer&apos;s Guide
             </h1>
             <p className="mt-6 text-lg leading-8 text-white/70">
               Web accessibility isn't just a legal requirement—it's good business. Learn practical techniques for building inclusive digital experiences that work for everyone.
@@ -71,7 +72,7 @@ export default function BlogPost() {
               <li><strong className="text-white">Keyboard navigation:</strong> Make all interactive elements accessible via keyboard</li>
               <li><strong className="text-white">Form labels:</strong> Associate labels with form inputs for screen readers</li>
               <li><strong className="text-white">Focus indicators:</strong> Show clear visual focus states for keyboard users</li>
-              <li><strong className="text-white">ARIA attributes:</strong> Use ARIA roles and properties where semantic HTML isn't enough</li>
+              <li><strong className="text-white">ARIA attributes:</strong> Use ARIA roles and properties where semantic HTML is not enough</li>
             </ul>
 
             <h2 className="text-2xl font-semibold tracking-tight text-white mt-8">Testing for Accessibility</h2>

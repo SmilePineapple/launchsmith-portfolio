@@ -15,82 +15,66 @@ export const metadata: Metadata = {
 const services = [
   {
     title: "Websites",
-    description: "I build modern, responsive websites that help you connect with customers across the UK. From landing pages to full marketing sites, I create fast, SEO-friendly designs that work beautifully on every device.",
-    outcomes: [
-      "Fast, responsive, modern design",
-      "SEO-ready structure and metadata",
-      "Clean copy layout and clear CTAs",
-    ],
-    included: ["Landing pages", "Marketing sites", "Portfolio sites", "Content pages"],
-    priceRange: "£250 - £8,000",
+    description:
+      "Responsive marketing sites, landing pages, and portfolio sites with clear copy structure, strong performance, and SEO-ready foundations.",
+    outcomes: ["Sharper first impression", "Clear enquiry paths", "Fast pages that are easy to maintain"],
+    included: ["Landing pages", "Marketing sites", "Content pages", "Technical SEO"],
+    href: "/services/websites",
+    typical: "From focused landing pages to full business websites.",
   },
   {
     title: "Web Apps",
-    description: "Need more than a website? I build full-stack web applications with authentication, dashboards, and scalable foundations. Whether it's an internal tool or customer platform, I'll create something that solves real business problems.",
-    outcomes: [
-      "Solid foundations for scaling",
-      "Auth, dashboards, admin flows",
-      "Clean UI and maintainable code",
-    ],
-    included: ["App shells", "CRUD + workflows", "Integrations", "Deployment"],
-    priceRange: "£1,000 - £15,000",
+    description:
+      "Custom product workflows, dashboards, portals, and internal tools built with reliable full-stack foundations.",
+    outcomes: ["Cleaner operations", "Usable dashboards", "Room to scale after launch"],
+    included: ["Auth", "CRUD workflows", "Integrations", "Deployment"],
+    href: "/services/web-apps",
+    typical: "Best for tools that need accounts, data, and repeat usage.",
   },
   {
     title: "Mobile Apps",
-    description: "I build polished iOS and mobile applications that users love. From MVPs to companion apps, I focus on great UX, solid performance, and clean app store submissions. Let's turn your mobile idea into something people actually want to use.",
-    outcomes: [
-      "Polished UX for iOS and Android",
-      "Performance and reliability focus",
-      "Clean releases and iteration",
-    ],
-    included: ["MVPs", "Companion apps", "App store prep", "API integration"],
-    priceRange: "£500 - £30,000",
+    description:
+      "Polished iOS and cross-platform apps for MVPs, companion products, and focused consumer tools.",
+    outcomes: ["App-store ready releases", "Mobile-first UX", "Fast iteration after feedback"],
+    included: ["MVPs", "API integration", "Release prep", "Iteration support"],
+    href: "/services/mobile-apps",
+    typical: "Best for ideas where the phone is the natural home.",
   },
   {
     title: "Automation / AI Integrations",
-    description: "Let's remove the busywork. I connect your tools via APIs and webhooks, automate repetitive workflows, and add AI features where they actually make sense. From internal tools to customer-facing automation, I'll help you work smarter.",
-    outcomes: [
-      "Automate manual workflows",
-      "Connect tools via APIs and webhooks",
-      "Add AI features where they make sense",
-    ],
-    included: ["Webhook automations", "Internal tools", "AI features", "System glue"],
-    priceRange: "£1,000 - £15,000",
+    description:
+      "Workflow automation, API glue, and practical AI features for businesses that want to remove repeated manual work.",
+    outcomes: ["Less admin", "Connected systems", "Useful AI without theatre"],
+    included: ["Webhooks", "Internal tools", "AI features", "System integrations"],
+    href: "/services/automation",
+    typical: "Best when your process already exists but takes too much time.",
   },
 ] as const;
 
 const faq = [
   {
     q: "What technologies do you use?",
-    a: "I work with modern stacks: Next.js, React, TypeScript, and Node.js for web. For iOS, I use Swift. I choose tools based on what fits the project best.",
+    a: "Mostly Next.js, React, TypeScript, Node.js, and Swift. I choose the stack around the product, not the other way round.",
   },
   {
     q: "Do you work with startups?",
-    a: "Yes. I’ve worked with early-stage founders and established businesses. I’m comfortable with fast iteration, MVPs, and scaling up.",
+    a: "Yes. I am comfortable with MVPs, early product decisions, fast feedback loops, and building just enough to launch properly.",
   },
   {
     q: "Can you help with SEO?",
-    a: "Yes. I build with SEO in mind — clean structure, fast performance, proper metadata, and technical best practices. I can also help with content strategy.",
+    a: "Yes. I build with clean structure, metadata, performance, accessibility, and content hierarchy in mind from the start.",
   },
   {
     q: "How long does a typical build take?",
-    a: "It depends on scope. A clean website can be quick; apps take longer. I’ll give you a clear plan once I understand the requirements.",
+    a: "A focused website can be quick; apps and platforms take longer. I will give you a clear scope and timeline after discovery.",
   },
   {
     q: "Do you offer ongoing support?",
-    a: "Yes. We can agree a lightweight support setup after launch (fixes, improvements, iterations).",
-  },
-  {
-    q: "What’s your pricing model?",
-    a: "I work on a project basis — no hourly billing, no surprise invoices. We agree scope and price upfront, and I deliver against that.",
-  },
-  {
-    q: "Do you work with clients outside the UK?",
-    a: "Yes. I’m UK-based but work with clients globally. Remote collaboration is standard for me.",
+    a: "Yes. After launch we can agree a light support or iteration setup for improvements, fixes, and new features.",
   },
   {
     q: "Can you help with existing projects?",
-    a: "Yes. I can take over existing codebases, refactor legacy code, or add new features to what you already have.",
+    a: "Yes. I can review, improve, or extend existing codebases when the foundations are workable.",
   },
 ] as const;
 
@@ -112,13 +96,14 @@ export default function ServicesPage() {
     "@context": "https://schema.org",
     "@type": "Service",
     name: "Launchsmith Services",
-    description: "Website development, web applications, iOS apps, and automation/AI integration. UK-based developer serving clients across the country with fast, professional builds.",
+    description:
+      "Website development, web applications, iOS apps, and automation/AI integration. UK-based developer serving clients across the country with fast, professional builds.",
     provider: {
       "@type": "Organization",
       name: "Launchsmith",
       url: "https://launchsmith-portfolio.vercel.app",
     },
-    areaServed: ["United Kingdom", "Manchester", "Liverpool", "Leeds", "London", "Birmingham", "Bristol", "Edinburgh", "Glasgow", "Newcastle", "Sheffield", "Nottingham", "Leicester", "Brighton"],
+    areaServed: ["United Kingdom", "Manchester", "Liverpool", "Leeds", "London"],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Development Services",
@@ -136,133 +121,107 @@ export default function ServicesPage() {
 
   return (
     <div className="bg-transparent">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-        />
-      </head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Container className="py-14 sm:py-16">
-        <div className="max-w-2xl">
-          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
-            Services
+        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+          <div>
+            <div className="section-label">Services</div>
+            <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+              Clear technical help for serious launches.
+            </h1>
           </div>
-          <h1 className="mt-3 font-serif text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-            Services
-          </h1>
-          <p className="mt-4 text-lg leading-8 text-white/70">
-            No packages and no hard pricing here — just a clean conversation about
-            what you need, and a build plan that fits. Explore my{" "}
-            <Link href="/portfolio" className="text-[var(--accent-2)] hover:underline">
-              portfolio
-            </Link>{" "}
-            to see examples of my work, or{" "}
-            <Link href="/contact" className="text-[var(--accent-2)] hover:underline">
-              get in touch
-            </Link>{" "}
-            to discuss your project.
+          <p className="max-w-2xl text-lg leading-8 text-white/70">
+            I work with founders and small teams who need a practical builder: someone
+            who can shape the product, write the code, polish the interface, and get it
+            live without making the process heavier than it needs to be.
           </p>
         </div>
 
-        <div className="mt-10 grid gap-4 lg:grid-cols-2">
+        <div className="mt-12 divide-y divide-white/10 border-y border-white/10">
           {services.map((s) => (
-            <section
-              key={s.title}
-              className="rounded-2xl border border-white/10 p-6 card-glass"
-            >
-              <h2 className="text-base font-semibold tracking-tight text-white">
-                {s.title}
-              </h2>
-              <p className="mt-3 text-sm leading-6 text-white/70">
-                {s.description}
-              </p>
-              <div className="mt-4 grid gap-6 sm:grid-cols-2">
-                <div>
-                  <div className="text-xs font-semibold uppercase tracking-wide text-white/60">
-                    Outcomes
-                  </div>
-                  <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-white/70">
-                    {s.outcomes.map((o) => (
-                      <li key={o}>{o}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <div className="text-xs font-semibold uppercase tracking-wide text-white/60">
-                    Includes
-                  </div>
-                  <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-white/70">
-                    {s.included.map((i) => (
-                      <li key={i}>{i}</li>
-                    ))}
-                  </ul>
-                </div>
+            <section key={s.title} className="grid gap-6 py-8 lg:grid-cols-[260px_1fr]">
+              <div>
+                <h2 className="text-2xl font-semibold tracking-tight text-white">
+                  {s.title}
+                </h2>
+                <p className="mt-3 text-sm leading-6 text-white/55">{s.typical}</p>
+                <Link href={s.href} className="text-link mt-5 inline-block text-sm">
+                  View service
+                </Link>
               </div>
-              <div className="mt-6 flex items-center justify-between">
-                <div className="text-sm font-semibold text-[var(--accent-2)]">
-                  {s.priceRange}
+              <div className="grid gap-6 md:grid-cols-[1fr_0.8fr]">
+                <div>
+                  <p className="text-sm leading-7 text-white/70">{s.description}</p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {s.included.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-white/10 bg-white/[0.035] px-3 py-1 text-xs text-white/62"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Link
-                    href={`/services/${s.title.toLowerCase().replace(/ /g, "-").replace(" / ", "-")}`}
-                    className="text-sm font-semibold text-[var(--accent-2)] hover:underline"
-                  >
-                    Find out more
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="text-sm font-semibold text-[var(--accent-2)] hover:underline"
-                  >
-                    Ask about {s.title.toLowerCase()}
-                  </Link>
+                <div className="rounded-[18px] border border-white/10 bg-white/[0.025] p-5">
+                  <div className="section-label">Outcomes</div>
+                  <ul className="mt-4 space-y-3 text-sm leading-6 text-white/68">
+                    {s.outcomes.map((o) => (
+                      <li key={o} className="flex gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--accent-2)]" />
+                        <span>{o}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </section>
           ))}
         </div>
 
-        <div className="mt-16 max-w-3xl">
-          <h2 className="text-xl font-semibold tracking-tight text-white">FAQ</h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <div className="mt-16 grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
+          <div>
+            <div className="section-label">FAQ</div>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
+              The practical details
+            </h2>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
             {faq.map((item) => (
-              <section
-                key={item.q}
-                className="rounded-2xl border border-white/10 p-6 card-glass"
-              >
+              <section key={item.q} className="rounded-[18px] border border-white/10 p-5">
                 <h3 className="text-sm font-semibold tracking-tight text-white">
                   {item.q}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-white/70">{item.a}</p>
+                <p className="mt-2 text-sm leading-6 text-white/64">{item.a}</p>
               </section>
             ))}
           </div>
         </div>
 
-        <div className="relative mt-16 overflow-hidden rounded-[36px] border border-white/10 p-8 card-glass ring-glow">
-          <div
-            aria-hidden
-            className="orb pointer-events-none absolute -right-24 -bottom-24 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.38),transparent_70%)] blur-2xl"
-          />
-          <div className="relative">
-            <h2 className="text-xl font-semibold tracking-tight text-white">
-              Ready to start?
+        <div className="panel mt-16 grid gap-6 p-7 sm:grid-cols-[1fr_auto] sm:items-center sm:p-8">
+          <div>
+            <div className="section-label">Start</div>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
+              Tell me what you want to build.
             </h2>
-            <p className="mt-2 text-sm text-white/70">
-              Send a message with what you’re building and your timeline.
+            <p className="mt-2 text-sm leading-6 text-white/64">
+              A short brief is enough. I will come back with the right questions,
+              likely scope, and a sensible next step.
             </p>
-            <div className="mt-6">
-              <Link
-                href="/contact"
-                className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold hover:opacity-95"
-              >
-                Contact
-              </Link>
-            </div>
           </div>
+          <Link
+            href="/contact"
+            className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-7 text-sm font-semibold hover:opacity-95"
+          >
+            Contact
+          </Link>
         </div>
       </Container>
     </div>

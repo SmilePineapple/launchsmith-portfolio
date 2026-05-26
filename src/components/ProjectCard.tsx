@@ -7,7 +7,7 @@ export function ProjectCard({ project }: { project: Project }) {
   const isIos = project.category === "iOS App";
 
   return (
-    <div className="group overflow-hidden rounded-3xl border border-white/10 card-glass transition-transform hover:-translate-y-0.5">
+    <article className="group overflow-hidden rounded-[18px] border border-white/10 bg-white/[0.035] transition duration-300 hover:-translate-y-0.5 hover:border-white/18 hover:bg-white/[0.055]">
       <Link href={`/portfolio/${project.slug}`} className="block">
         <div className="relative aspect-[16/10] overflow-hidden bg-[var(--surface-muted)]">
           {isIos && (
@@ -22,21 +22,21 @@ export function ProjectCard({ project }: { project: Project }) {
             fill
             sizes="(max-width: 1024px) 100vw, 33vw"
             className={[
-              "transition duration-700 group-hover:scale-[1.07] group-hover:saturate-125",
+              "transition duration-700 group-hover:scale-[1.04]",
               isIos ? "object-contain p-6" : "object-cover",
             ].join(" ")}
           />
           <div
             aria-hidden
-            className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"
+            className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent"
           />
         </div>
       </Link>
       <div className="p-6">
-        <div className="text-xs font-semibold uppercase tracking-[0.16em] text-white/60">
+        <div className="section-label">
           {project.category}
         </div>
-        <h3 className="mt-3 font-serif text-xl font-semibold tracking-tight text-white">
+        <h3 className="mt-3 text-xl font-semibold tracking-tight text-white">
           <Link href={`/portfolio/${project.slug}`} className="hover:underline">
             {project.title}
           </Link>
@@ -47,30 +47,30 @@ export function ProjectCard({ project }: { project: Project }) {
           {project.stack.slice(0, 4).map((tag) => (
             <span
               key={tag}
-              className="chip rounded-full border border-white/10 px-2.5 py-1 text-xs text-white/70"
+              className="rounded-full border border-white/10 bg-white/[0.035] px-2.5 py-1 text-xs text-white/64"
             >
               {tag}
             </span>
           ))}
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-3">
+        <div className="mt-6 flex flex-wrap items-center gap-4">
           <Link
             href={`/portfolio/${project.slug}`}
-            className="btn-primary inline-flex h-10 items-center justify-center rounded-full px-5 text-xs font-semibold uppercase tracking-[0.14em] hover:opacity-95"
+            className="text-link text-sm"
           >
-            Case study
+            Read case study
           </Link>
           <a
             href={project.external.url}
             target="_blank"
             rel="noreferrer"
-            className="btn-secondary inline-flex h-10 items-center justify-center rounded-full border border-white/10 px-5 text-xs font-semibold uppercase tracking-[0.14em] text-white hover:bg-white/10"
+            className="text-sm font-medium text-white/55 hover:text-white"
           >
             {project.external.label}
           </a>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

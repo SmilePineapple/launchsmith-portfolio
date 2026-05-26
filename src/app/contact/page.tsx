@@ -17,47 +17,40 @@ export default function ContactPage() {
       <Container className="py-14 sm:py-16">
         <div className="grid gap-10 lg:grid-cols-[1fr_420px] lg:items-start">
           <div className="max-w-2xl">
-            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
-              Contact
-            </div>
-            <h1 className="mt-3 font-serif text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-              Contact
+            <div className="section-label">Contact</div>
+            <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+              Tell me what you want to build.
             </h1>
             <p className="mt-4 text-lg leading-8 text-white/70">
-              Tell me what you want to build. A few lines is enough — I’ll reply
-              with next steps and any questions.
+              A few lines is enough. Send the goal, any useful links, and the rough
+              timeline. I will reply with the right next questions.
             </p>
-            <div className="mt-8 grid gap-4">
+            <div className="mt-8 divide-y divide-white/10 border-y border-white/10">
               {[
                 {
                   title: "Best for",
                   body: "New builds, rebuilds, MVPs, automation, and AI integrations.",
                 },
                 {
-                  title: "What to include",
-                  body: "What you’re building, any links/examples, and your timeline.",
+                  title: "Useful context",
+                  body: "What you are building, who it is for, any examples, and your timeline.",
                 },
                 {
                   title: "Response time",
-                  body: "Typically within 24–48 hours. I'll respond with next steps and any questions.",
+                  body: "Usually within 24 to 48 hours with next steps or clarifying questions.",
                 },
               ].map((s) => (
-                <section
-                  key={s.title}
-                  className="rounded-2xl border border-white/10 p-6 card-glass"
-                >
+                <section key={s.title} className="py-5">
                   <h2 className="text-sm font-semibold tracking-tight text-white">
                     {s.title}
                   </h2>
-                  <p className="mt-2 text-sm leading-6 text-white/70">{s.body}</p>
+                  <p className="mt-2 text-sm leading-6 text-white/64">{s.body}</p>
                 </section>
               ))}
             </div>
           </div>
 
-          <div>
-            <ContactForm />
-          </div>
+          <ContactForm />
         </div>
       </Container>
     </div>

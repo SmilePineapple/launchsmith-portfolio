@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -17,121 +18,114 @@ export default function AboutPage() {
   return (
     <div className="bg-transparent">
       <Container className="py-14 sm:py-16">
-        <div className="grid gap-12 lg:grid-cols-[320px_1fr] lg:items-start">
-          <div>
-            <div className="aspect-square w-full max-w-[320px] rounded-3xl border border-white/10 bg-[var(--surface-muted)] card-glass ring-glow overflow-hidden">
-              <img
-                src="/headshot.jpeg"
-                alt="Jake Dale-Rourke - Launchsmith"
-                className="w-full h-full object-cover"
-              />
+        <div className="grid gap-12 lg:grid-cols-[340px_1fr] lg:items-start">
+          <div className="lg:sticky lg:top-24">
+            <div className="overflow-hidden rounded-[18px] border border-white/10 bg-[var(--surface-muted)] ring-glow">
+              <div className="relative aspect-[4/5]">
+                <Image
+                  src="/headshot.jpeg"
+                  alt="Jake Dale-Rourke - Launchsmith"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 340px"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+            <div className="mt-5 rounded-[18px] border border-white/10 p-5">
+              <div className="section-label">Based in</div>
+              <p className="mt-2 text-sm text-white/70">{site.location}</p>
+              <div className="mt-4 flex gap-4">
+                <a
+                  href={site.socials.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-link text-sm"
+                >
+                  GitHub
+                </a>
+                <a
+                  href={site.socials.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-link text-sm"
+                >
+                  LinkedIn
+                </a>
+              </div>
             </div>
           </div>
-          <div className="max-w-2xl">
-            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
-              About
-            </div>
-            <h1 className="mt-3 font-serif text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-              About
+
+          <div className="max-w-3xl">
+            <div className="section-label">About</div>
+            <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+              A practical technical partner for small teams and founders.
             </h1>
-            <p className="mt-4 text-lg leading-8 text-white/70">
-              I'm Jake, a web and mobile developer based in Longridge, Preston. I
-              build clean, modern websites, web applications, and iOS apps for
-              clients across the UK. Whether you're a startup founder, small business
-              owner, or someone with a great idea, I'll help you turn it into a
-              polished product that actually works. Check out my{" "}
-              <Link href="/portfolio" className="text-[var(--accent-2)] hover:underline">
-                portfolio
-              </Link>{" "}
-              to see recent projects, or explore my{" "}
-              <Link href="/services" className="text-[var(--accent-2)] hover:underline">
-                services
-              </Link>{" "}
-              to learn how I can help.
-            </p>
-            <p className="mt-4 text-lg leading-8 text-white/70">
-              I believe in straightforward communication, honest timelines, and
-              shipping quality work. No jargon overload, no hidden costs — just a
-              collaborative process where we build something you're proud of.
-            </p>
-            <div className="mt-8 grid gap-4">
+            <div className="mt-5 space-y-5 text-lg leading-8 text-white/70">
+              <p>
+                I am Jake, a web and mobile developer based in Longridge, Preston. I
+                build websites, web applications, and mobile apps for clients across
+                the UK, with a focus on clean UX, reliable implementation, and a
+                polished launch.
+              </p>
+              <p>
+                The work is intentionally straightforward: clear communication, honest
+                timelines, useful decisions, and code that can keep moving after the
+                first release.
+              </p>
+            </div>
+
+            <div className="mt-10 divide-y divide-white/10 border-y border-white/10">
               {[
                 {
                   title: "What I do",
-                  body: "End-to-end product builds: from initial idea and UX design through to frontend, backend, integrations, and deployment. I handle the full development process so you can focus on your business.",
+                  body: "End-to-end product builds: discovery, interface design, frontend, backend, integrations, deployment, and iteration.",
                 },
                 {
                   title: "How I work",
-                  body: "Fast iteration, clear communication, and a focus on shipping with quality. I'll keep you updated throughout the project, explain technical decisions in plain English, and deliver on the timeline we agree on.",
+                  body: "Fast feedback loops, visible progress, plain-English technical decisions, and careful scope control.",
                 },
                 {
                   title: "Availability",
-                  body: "Currently taking on new projects. Whether you're in Manchester, Liverpool, Leeds, London, or anywhere else in the UK, send a message with what you're building and your timeline.",
+                  body: "Currently taking on new projects for websites, apps, automation, and practical AI integrations.",
                 },
               ].map((s) => (
-                <section
-                  key={s.title}
-                  className="rounded-2xl border border-white/10 p-6 card-glass"
-                >
+                <section key={s.title} className="grid gap-3 py-6 sm:grid-cols-[180px_1fr]">
                   <h2 className="text-base font-semibold tracking-tight text-white">
                     {s.title}
                   </h2>
-                  <p className="mt-3 text-sm leading-6 text-white/70">{s.body}</p>
+                  <p className="text-sm leading-6 text-white/64">{s.body}</p>
                 </section>
               ))}
             </div>
 
             <div className="mt-12">
-              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
-                Process
-              </div>
-              <h2 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-white">
+              <div className="section-label">Process</div>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
                 How I work
               </h2>
               <div className="mt-6 grid gap-4">
                 {[
-                  {
-                    step: "1",
-                    title: "Discovery",
-                    description: "We start with a conversation about what you're building, your goals, and any existing work. I'll ask questions to understand the full scope.",
-                  },
-                  {
-                    step: "2",
-                    title: "Planning",
-                    description: "I'll create a clear plan with timeline, deliverables, and pricing. No surprises — we agree on everything before I start building.",
-                  },
-                  {
-                    step: "3",
-                    title: "Build",
-                    description: "I'll build your project with regular updates and check-ins. You'll see progress throughout the development process.",
-                  },
-                  {
-                    step: "4",
-                    title: "Launch",
-                    description: "We'll test thoroughly, fix any issues, and deploy to production. I'll handle the technical setup so you can focus on your business.",
-                  },
-                  {
-                    step: "5",
-                    title: "Support",
-                    description: "After launch, I'm available for fixes, improvements, and iterations. We can agree on an ongoing support arrangement if needed.",
-                  },
-                ].map((s) => (
+                  ["1", "Discovery", "We clarify goals, users, scope, risks, and the smallest useful launch."],
+                  ["2", "Planning", "I map deliverables, timeline, technical approach, and the decisions needed before build."],
+                  ["3", "Build", "You see steady progress while I design, code, integrate, and refine the product."],
+                  ["4", "Launch", "We test, fix, deploy, and make sure the release is ready for real users."],
+                  ["5", "Support", "After launch, we can improve the product with fixes, analytics, and new features."],
+                ].map(([step, title, description]) => (
                   <section
-                    key={s.step}
-                    className="rounded-2xl border border-white/10 p-6 card-glass"
+                    key={step}
+                    className="grid gap-4 rounded-[18px] border border-white/10 p-5 sm:grid-cols-[44px_1fr]"
                   >
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--accent-2)] text-xs font-semibold text-white">
-                        {s.step}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-base font-semibold tracking-tight text-white">
-                          {s.title}
-                        </h3>
-                        <p className="mt-2 text-sm leading-6 text-white/70">
-                          {s.description}
-                        </p>
-                      </div>
+                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-sm font-semibold text-black">
+                      {step}
+                    </div>
+                    <div>
+                      <h3 className="text-base font-semibold tracking-tight text-white">
+                        {title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-6 text-white/64">
+                        {description}
+                      </p>
                     </div>
                   </section>
                 ))}
@@ -151,29 +145,6 @@ export default function AboutPage() {
               >
                 View work
               </Link>
-            </div>
-
-            <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href={site.socials.github}
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm font-semibold text-white/70 hover:text-white"
-              >
-                GitHub
-              </a>
-              <a
-                href={site.socials.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm font-semibold text-white/70 hover:text-white"
-              >
-                LinkedIn
-              </a>
-            </div>
-
-            <div className="mt-10 text-sm text-white/55">
-              {site.name} · {site.role}
             </div>
           </div>
         </div>
